@@ -55,6 +55,10 @@ class CartList {
     const newState = this.state.filter((item) => item.id !== id);
     this.setState(newState);
   }
+
+  saveToLocalStorage() {
+    localStorage.setItem('cartState', JSON.stringify(this.state));
+  }
   render() {
     this.$totalCount.innerHTML =
       this.state
